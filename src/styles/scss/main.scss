@@ -1,0 +1,239 @@
+@use './modules/bases';
+@use './modules/variables' as *;
+@use './modules/mixins' as *;
+
+
+
+
+.header-page {
+
+    background-image: url("/images/desktop/image-hero.jpg");
+    height: 90vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-bottom: $xl-space;
+
+
+    .header-page__nav {
+        @include flex-layout(space-between, center);
+        height: 150px;
+        margin-bottom: $lg-space;
+    }
+
+    .header-page__links {
+        @include flex-layout(space-between, center);
+        gap: $md-space;
+    }
+
+    .header-page__link {
+        position: relative;
+        color: $white;
+    }
+
+    .header-page__link::before {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%);
+        width: 0%;
+        height: 3px;
+        background-color: $white;
+        margin-top: 10px;
+        transition: 0.3s ease;
+    }
+
+    .header-page__link--hover:hover::before {
+        width: 40%;
+    }
+
+    .header-page__title {
+        width: 60%;
+        color: $white;
+        padding: 0.8em;
+        border: 3px solid $white;
+    }
+}
+
+
+main {
+    margin-bottom: $xl-space;
+}
+
+
+.leader {
+    margin-bottom: $xl-space;
+    position: relative;
+
+    .leader__description {
+        background-color: $white;
+        padding: $lg-space;
+        width: 50%;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+    }
+
+    .leader__title {
+        margin-bottom: 0.6em;
+        color: $black;
+    }
+
+    .leader__text {
+        color: $grey-200
+    }
+}
+
+
+
+
+.creations {
+    .creations__header {
+        @include flex-layout(space-between, center);
+        margin-bottom: $lg-space;
+    }
+
+    .creations__action-button {
+        border: 2px solid $black;
+        padding: 8px $md-space;
+        color: $black;
+        font-family: 'Josefin Sans', sans-serif;
+        font-weight: 400;
+        letter-spacing: 5px;
+        transition: 0.3s ease;
+    }
+
+    .creations__action-button--hover:hover {
+        background-color: $black;
+        color: $white;
+    }
+
+    .creations__wrapper {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: $md-space;
+    }
+
+    .creations__wrapper-card {
+        display: block;
+        position: relative;
+        color: $white;
+        overflow: hidden;
+    }
+
+    .creations__image img {
+        transition: 0.3s ease;
+    }
+
+    .creations__wrapper-card--hover:hover img {
+        opacity: 0.4;
+    }
+
+    .creations__wrapper-card--hover:hover .creations__wrapper-card-content {
+        color: $black;
+        background: none;
+    }
+
+
+    .creations__wrapper-card-content {
+        position: absolute;
+        bottom: 0;
+        padding: $md-space;
+        background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    }
+}
+
+
+
+.footer {
+    background-color: $black;
+    color: $white;
+    padding: $md-space 0;
+
+    .container {
+        @include flex-layout(space-between, center);
+    }
+
+    .footer__logo {
+        display: block;
+        margin-bottom: $sm-space;
+    }
+
+    .footer__nav-links {
+        @include flex-layout(baseline, center);
+        gap: $md-space;
+    }
+
+    .footer__nav-link {
+        color: $white;
+        position: relative;
+    }
+
+    .footer__social-link {
+        position: relative;
+    }
+
+
+    .footer__social-links {
+        margin-bottom: 1.5em;
+        @include flex-layout(baseline, center);
+        gap: $sm-space;
+    }
+
+    .footer__mention {
+        color: $grey-200;
+        margin-bottom: $sm-space;
+    }
+
+
+
+    .footer__nav-link::before {
+        content: "";
+        position: absolute;
+        top: 100%;
+        width: 0%;
+        height: 3px;
+        background-color: $white;
+        left: 50%;
+        transform: translate(-50%);
+        margin-top: 10px;
+        transition: 0.3s ease;
+    }
+
+    .footer__nav-links-item--hover:hover::before {
+        width: 40%;
+    }
+
+
+    .footer__social-link::before {
+        content: "";
+        position: absolute;
+        top: 100%;
+        width: 0%;
+        height: 3px;
+        background-color: $white;
+        left: 50%;
+        transform: translate(-50%);
+        margin-top: 5px;
+        transition: 0.3s ease;
+    }
+
+    .footer__social-link--hover:hover::before {
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+.attribution a {
+     color: hsl(228, 45%, 44%); 
+}
