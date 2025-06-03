@@ -53,6 +53,39 @@
         color: $white;
         padding: 0.8em;
         border: 3px solid $white;
+        overflow-wrap: break-word;
+    }
+
+    .header__toggleBtn {
+        background-color: transparent;
+        border: none;
+        display: none;
+    }
+
+    @media screen and (max-width: 48rem) {
+        & {
+            background-image: url("/images/mobile/image-hero.jpg");
+        }
+
+        .header-page__links {
+            display: none;
+        }
+
+        .header__toggleBtn {
+            display: block;
+        }
+
+        .header-page__title {
+            width: unset;
+            font-size: 2.5em;
+        }
+    }
+
+    @media screen and (max-width: 320px) {
+        .header-page__title {
+            width: unset;
+            font-size: 2em;
+        }
     }
 }
 
@@ -83,12 +116,37 @@ main {
     .leader__text {
         color: $grey-200
     }
+
+    @media screen and (max-width: 48rem) {
+        .leader__title {
+            font-size: 2em;
+        }
+        .leader__image {
+            margin-bottom: $lg-space;
+            display: block;
+        }
+
+        .leader__image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .leader__description {
+            position: unset;
+            inset: auto;
+            padding: 0;
+            width: unset;
+            text-align: center
+        }
+    }
 }
 
 
 
 
 .creations {
+
     .creations__header {
         @include flex-layout(space-between, center);
         margin-bottom: $lg-space;
@@ -138,9 +196,101 @@ main {
 
     .creations__wrapper-card-content {
         position: absolute;
-        bottom: 0;
+        top: 0;
+        left: 0;
+        // bottom: 0;
         padding: $md-space;
+        width: 100%;
+        height: 100%;
         background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+
+        @include flex-layout(baseline, end);
+    }
+
+    .creation__action-btn-mobile {
+        display: none;
+    }
+
+
+    @media screen and (max-width: 1080px) {
+        .creations__wrapper {
+            grid-template-columns: repeat(3, 1fr);
+            margin-bottom: $lg-space;
+        }
+    }
+
+    @media screen and (max-width: 48rem) {
+        .creations__wrapper {
+            grid-template-columns: repeat(2, 1fr);
+            margin-bottom: $lg-space;
+        }
+    }
+
+    @media screen and (max-width: 40rem) {
+        .creations__header {
+            flex-direction: column;
+        }
+        
+        .creations__title {
+            text-align: center;
+            font-size: 2em;
+        }
+
+        .creations__action-button {
+            display: none;
+        }
+
+        .creations__wrapper {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        .creations__wrapper-card {
+            width: 100%;
+            height: 100%;
+        }
+
+        .creations__wrapper-card-content h2 {
+            font-size: 1.8em;
+        }
+
+        .creations__image img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .creations__wrapper-card-content {
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+            padding: 0.8em;
+        }
+
+        .creation__action-btn-mobile {
+            display: block;
+            width: 50%;
+            margin-inline: auto;
+        }
+
+        .creation__action-btn-mobile {
+            display: block;
+            width: 50%;
+            margin-inline: auto;
+            text-align: center;
+        }
+    }
+
+    @media screen and (max-width: 375px) {
+        .creations__wrapper-card-content h2 {
+            font-size: 1.8em;
+        }
+    }
+
+    @media screen and (max-width: 375px) {
+        .creation__action-btn-mobile {
+            text-align: start;
+        }
+
+        .creations__wrapper-card-content h2 {
+            font-size: 1.5em;
+        }
     }
 }
 
@@ -222,6 +372,65 @@ main {
     .footer__social-link--hover:hover::before {
         width: 100%;
     }
+
+    @media screen and (max-width: 48rem) {
+        .container,
+        .footer__nav-links {
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+
+        .footer__nav {
+            margin-bottom: $lg-space;
+        }
+
+        .footer__social-links {
+            justify-content: center;
+            margin-bottom: $sm-space;
+        }
+    }
+}
+
+
+
+
+.mobileMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $black;
+    z-index: 1000;
+    padding: 3em 1.5em;
+    display: none;
+    visibility: hidden;
+
+    header {
+        @include flex-layout(space-between, center);
+        margin-bottom: $xl-space;
+    }
+
+    .closeBtn {
+        background-color: transparent;
+        border: none;
+    }
+
+    ul li {
+        margin-bottom: $sm-space;
+    }
+
+    ul li a {
+        font-size: 2em;
+        font-weight: 300;
+        font-family: 'Josefin Sans', sans-serif;
+        color: $white;
+    }
+
+    &.show {
+        display: block;
+        visibility: visible;
+    }
 }
 
 
@@ -230,10 +439,10 @@ main {
 
 
 
-.attribution { 
-    font-size: 11px; 
-    text-align: center; 
-}
-.attribution a {
-     color: hsl(228, 45%, 44%); 
-}
+// .attribution { 
+//     font-size: 11px; 
+//     text-align: center; 
+// }
+// .attribution a {
+//      color: hsl(228, 45%, 44%); 
+// }

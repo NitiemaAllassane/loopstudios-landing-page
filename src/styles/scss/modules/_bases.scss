@@ -20,6 +20,12 @@ body {
 .container {
     max-width: 1080px;
     margin: 0 auto;
+
+    @media screen and (max-width: 1440px) {
+        & {
+            width: 90%;
+        }
+    }
 }
 
 h1, h2, h3 h4 {
