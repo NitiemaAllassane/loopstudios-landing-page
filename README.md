@@ -30,8 +30,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://www.frontendmentor.io/solutions/loopstudios-landing-page-WNn_tFrtiq](https://www.frontendmentor.io/solutions/loopstudios-landing-page-WNn_tFrtiq)
-- Live Site URL: [https://loopstudios-landing-page-alpha-seven.vercel.app/](https://your-live-site-url.com)
+- Solution URL: [Frontend Mentor](https://www.frontendmentor.io/solutions/loopstudios-landing-page-WNn_tFrtiq)
+- Live Site URL: [Loopstudio](https://loopstudios-landing-page-alpha-seven.vercel.app/)
 
 ## My process
 
